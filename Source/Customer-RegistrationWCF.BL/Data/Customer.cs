@@ -9,6 +9,9 @@
 
 namespace Customer_RegistrationWCF.BL.Data
 {
+    using System;
+    using System.Collections.Generic;
+    
     public partial class Customer
     {
         public int Id { get; set; }
@@ -19,7 +22,7 @@ namespace Customer_RegistrationWCF.BL.Data
         public int InvoiceAddressId { get; set; }
         public string Name { get; set; }
     
-        public virtual Address Address { get; set; }
-        public virtual Address Address1 { get; set; }
+        public virtual Address InvoiceAddress { get; set; }
+        public virtual Address PostalAddress { get; set; }
     }
 }

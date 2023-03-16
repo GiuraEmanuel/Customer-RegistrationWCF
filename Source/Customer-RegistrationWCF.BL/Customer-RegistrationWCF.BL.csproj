@@ -61,9 +61,6 @@
     <Compile Include="Data\Customer.cs">
       <DependentUpon>MyDatabase.tt</DependentUpon>
     </Compile>
-    <Compile Include="Data\C__EFMigrationsHistory.cs">
-      <DependentUpon>MyDatabase.tt</DependentUpon>
-    </Compile>
     <Compile Include="Data\MyDatabase.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,23 +90,23 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Data\MyDatabase.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MyDatabase.Context.cs</LastGenOutput>
       <DependentUpon>MyDatabase.edmx</DependentUpon>
+      <LastGenOutput>MyDatabase.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Data\MyDatabase.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MyDatabase.edmx</DependentUpon>
       <LastGenOutput>MyDatabase.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

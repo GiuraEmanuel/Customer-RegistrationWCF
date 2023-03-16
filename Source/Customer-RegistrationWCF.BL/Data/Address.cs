@@ -9,15 +9,16 @@
 
 namespace Customer_RegistrationWCF.BL.Data
 {
+    using System;
     using System.Collections.Generic;
-
+    
     public partial class Address
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Address()
         {
-            this.Customers = new HashSet<Customer>();
-            this.Customers1 = new HashSet<Customer>();
+            this.CustomersInvoice = new HashSet<Customer>();
+            this.CustomersPostalAddress = new HashSet<Customer>();
         }
     
         public int Id { get; set; }
@@ -28,8 +29,8 @@ namespace Customer_RegistrationWCF.BL.Data
         public string Country { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customer> Customers { get; set; }
+        public virtual ICollection<Customer> CustomersInvoice { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customer> Customers1 { get; set; }
+        public virtual ICollection<Customer> CustomersPostalAddress { get; set; }
     }
 }

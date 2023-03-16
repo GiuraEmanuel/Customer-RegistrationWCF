@@ -25,7 +25,6 @@ namespace Customer_RegistrationWCF.BL.Data
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<C__EFMigrationsHistory> C__EFMigrationsHistory { get; set; }
         public virtual DbSet<Address> Addresses { get; set; }
         public virtual DbSet<Customer> Customers { get; set; }
     }

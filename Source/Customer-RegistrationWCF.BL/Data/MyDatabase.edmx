@@ -5,13 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="MyDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="__EFMigrationsHistory">
-          <Key>
-            <PropertyRef Name="MigrationId" />
-          </Key>
-          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
-          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
-        </EntityType>
         <EntityType Name="Addresses">
           <Key>
             <PropertyRef Name="Id" />
@@ -60,7 +53,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="MyDatabaseModelStoreContainer">
-          <EntitySet Name="__EFMigrationsHistory" EntityType="Self.__EFMigrationsHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Addresses" EntityType="Self.Addresses" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Customers_Addresses_InvoiceAddressId" Association="Self.FK_Customers_Addresses_InvoiceAddressId">
@@ -77,13 +69,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MyDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="C__EFMigrationsHistory">
-          <Key>
-            <PropertyRef Name="MigrationId" />
-          </Key>
-          <Property Name="MigrationId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="ProductVersion" Type="String" MaxLength="32" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
         <EntityType Name="Address">
           <Key>
             <PropertyRef Name="Id" />
@@ -94,8 +79,8 @@
           <Property Name="PostCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Customers" Relationship="Self.FK_Customers_Addresses_InvoiceAddressId" FromRole="Addresses" ToRole="Customers" />
-          <NavigationProperty Name="Customers1" Relationship="Self.FK_Customers_Addresses_PostalAddressId" FromRole="Addresses" ToRole="Customers" />
+          <NavigationProperty Name="CustomersInvoice" Relationship="Self.FK_Customers_Addresses_InvoiceAddressId" FromRole="Addresses" ToRole="Customers" />
+          <NavigationProperty Name="CustomersPostalAddress" Relationship="Self.FK_Customers_Addresses_PostalAddressId" FromRole="Addresses" ToRole="Customers" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -108,8 +93,8 @@
           <Property Name="PostalAddressId" Type="Int32" Nullable="false" />
           <Property Name="InvoiceAddressId" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Address" Relationship="Self.FK_Customers_Addresses_InvoiceAddressId" FromRole="Customers" ToRole="Addresses" />
-          <NavigationProperty Name="Address1" Relationship="Self.FK_Customers_Addresses_PostalAddressId" FromRole="Customers" ToRole="Addresses" />
+          <NavigationProperty Name="InvoiceAddress" Relationship="Self.FK_Customers_Addresses_InvoiceAddressId" FromRole="Customers" ToRole="Addresses" />
+          <NavigationProperty Name="PostalAddress" Relationship="Self.FK_Customers_Addresses_PostalAddressId" FromRole="Customers" ToRole="Addresses" />
         </EntityType>
         <Association Name="FK_Customers_Addresses_InvoiceAddressId">
           <End Role="Addresses" Type="Self.Address" Multiplicity="1" />
@@ -136,7 +121,6 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="MyDatabaseEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="C__EFMigrationsHistory" EntityType="Self.C__EFMigrationsHistory" />
           <EntitySet Name="Addresses" EntityType="Self.Address" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <AssociationSet Name="FK_Customers_Addresses_InvoiceAddressId" Association="Self.FK_Customers_Addresses_InvoiceAddressId">
@@ -154,14 +138,6 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="MyDatabaseModelStoreContainer" CdmEntityContainer="MyDatabaseEntities">
-          <EntitySetMapping Name="C__EFMigrationsHistory">
-            <EntityTypeMapping TypeName="MyDatabaseModel.C__EFMigrationsHistory">
-              <MappingFragment StoreEntitySet="__EFMigrationsHistory">
-                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
-                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Addresses">
             <EntityTypeMapping TypeName="MyDatabaseModel.Address">
               <MappingFragment StoreEntitySet="Addresses">
