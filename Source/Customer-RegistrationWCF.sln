@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer-RegistrationWCF.UI
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer-RegistrationWCF.BL", "Customer-RegistrationWCF.BL\Customer-RegistrationWCF.BL.csproj", "{4A0D3361-D745-4514-92BA-8FEC1267BE06}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customer-RegistrationWCF.Common", "Customer-RegistrationWCF.Common\Customer-RegistrationWCF.Common.csproj", "{C838C527-B9EC-4041-A91F-602C350F8AA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{4A0D3361-D745-4514-92BA-8FEC1267BE06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A0D3361-D745-4514-92BA-8FEC1267BE06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A0D3361-D745-4514-92BA-8FEC1267BE06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C838C527-B9EC-4041-A91F-602C350F8AA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C838C527-B9EC-4041-A91F-602C350F8AA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C838C527-B9EC-4041-A91F-602C350F8AA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C838C527-B9EC-4041-A91F-602C350F8AA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
