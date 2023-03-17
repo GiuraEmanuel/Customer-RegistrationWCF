@@ -79,7 +79,7 @@
           <Property Name="PostCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="CustomersInvoice" Relationship="Self.FK_Customers_Addresses_InvoiceAddressId" FromRole="Addresses" ToRole="Customers" />
+          <NavigationProperty Name="CustomersInvoiceAddress" Relationship="Self.FK_Customers_Addresses_InvoiceAddressId" FromRole="Addresses" ToRole="Customers" />
           <NavigationProperty Name="CustomersPostalAddress" Relationship="Self.FK_Customers_Addresses_PostalAddressId" FromRole="Addresses" ToRole="Customers" />
         </EntityType>
         <EntityType Name="Customer">

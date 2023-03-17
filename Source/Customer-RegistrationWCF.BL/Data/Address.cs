@@ -17,7 +17,7 @@ namespace Customer_RegistrationWCF.BL.Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Address()
         {
-            this.CustomersInvoice = new HashSet<Customer>();
+            this.CustomersInvoiceAddress = new HashSet<Customer>();
             this.CustomersPostalAddress = new HashSet<Customer>();
         }
     
@@ -29,7 +29,7 @@ namespace Customer_RegistrationWCF.BL.Data
         public string Country { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Customer> CustomersInvoice { get; set; }
+        public virtual ICollection<Customer> CustomersInvoiceAddress { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Customer> CustomersPostalAddress { get; set; }
     }
