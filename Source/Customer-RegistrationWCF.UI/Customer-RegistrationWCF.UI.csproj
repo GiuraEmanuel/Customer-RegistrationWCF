@@ -87,6 +87,12 @@
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Customer-RegistrationWCF.BL\Customer-RegistrationWCF.BL.csproj">
+      <Project>{4a0d3361-d745-4514-92ba-8fec1267be06}</Project>
+      <Name>Customer-RegistrationWCF.BL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

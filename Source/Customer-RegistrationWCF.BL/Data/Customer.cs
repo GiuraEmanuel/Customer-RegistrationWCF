@@ -9,9 +9,6 @@
 
 namespace Customer_RegistrationWCF.BL.Data
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class Customer
     {
         public int Id { get; set; }
